@@ -39,9 +39,9 @@ def get_pets_by_breed(pet_shop, breed):
 def find_pet_by_name(pet_shop, pet_name):
     for pet in pet_shop["pets"]:
         #if the pet name argument matches the pet['name'] value of the list item, the entire list item (dictionary) for this pet is returned
-         if pet_name == pet["name"]:
+        if pet_name == pet["name"]:
             return pet
-            break
+
 
 #function takes the pet name argument and loops through the pet_shop list
 def remove_pet_by_name(pet_shop, pet_name):
@@ -75,4 +75,20 @@ def add_pet_to_customer(customer, new_pet):
 def customer_can_afford_pet(customer, new_pet):
     if customer["cash"] >= new_pet["price"]:
         return True
+    else:
+        return False
+
+def sell_pet_to_customer(pet_shop, pet, customer):
+    if pet == None:
+        print("I'm sorry, we have no pets by that name")
+    else:
+        afford = customer_can_afford_pet(customer, pet)
+        if afford == True:
+            remove_customer_cash(customer,pet["price"])
+            add_or_remove_cash(pet_shop, pet["price"])
+            increase_pets_sold(pet_shop, 1)
+            add_pet_to_customer(customer, pet)
+        else:
+            print("Im sorry, you do not have sufficient funds for this purchase")
+
 
