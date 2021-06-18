@@ -67,5 +67,12 @@ def remove_customer_cash(customer, cash_payment):
 def get_customer_pet_count(customer):
     return len(customer["pets"])
 
+#function adds on the new_pet dictionary item to the specified customers ["pets"] list
 def add_pet_to_customer(customer, new_pet):
     customer["pets"].append(new_pet)
+
+#function compares the value in the cash key of the specified customer dictionary with the value in the price key of the new pet dictionary and returns true if the customer cash value is >=
+def customer_can_afford_pet(customer, new_pet):
+    if customer["cash"] >= new_pet["price"]:
+        return True
+
