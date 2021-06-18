@@ -32,15 +32,15 @@ def get_pets_by_breed(pet_shop, breed):
     #funciton loops through the items in the pet shop list
     for pet in pet_shop["pets"]:
         #if the list item (which is a dictionary) has a value in it's "breed" key matching the breed argument then this pets name is added to the pets_matching_breed list
-        if breed == pet['breed']:
-            pets_matching_breed.append(pet['name'])
+        if breed == pet["breed"]:
+            pets_matching_breed.append(pet["name"])
     return pets_matching_breed
 
 #function takes the pet name argument and loops through the pet_shop list
 def find_pet_by_name(pet_shop, pet_name):
     for pet in pet_shop["pets"]:
         #if the pet name argument matches the pet['name'] value of the list item, the entire list item (dictionary) for this pet is returned
-         if pet_name == pet['name']:
+         if pet_name == pet["name"]:
             return pet
             break
 
@@ -48,7 +48,11 @@ def find_pet_by_name(pet_shop, pet_name):
 def remove_pet_by_name(pet_shop, pet_name):
     for pet in pet_shop["pets"]:
         #if the pet name argument matches the pet['name'] value of the list item, the entire list item (dictionary) for this pet is removed from the pet_shop list
-         if pet_name == pet['name']:
+         if pet_name == pet["name"]:
             pet_shop["pets"].remove(pet)
             break
+
+#function adds on the new_pet dictionary item to the pet_shop["pets"] list
+def add_pet_to_stock(pet_shop, new_pet):
+    pet_shop["pets"].append(new_pet)
 
