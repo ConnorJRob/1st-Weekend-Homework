@@ -78,7 +78,9 @@ def customer_can_afford_pet(customer, new_pet):
     else:
         return False
 
+#function runs a series of logical checks before processing the sale of the pet, using a number of the already created functions to do so
 def sell_pet_to_customer(pet_shop, pet, customer):
+    #in order to account for the test where the pet name 'dave' is given, resulting in a null result from the find_pet_by_name functon, this if statment ends the sale function if no such pet is found in the pet store list
     if pet == None:
         print("I'm sorry, we have no pets by that name")
     else:
