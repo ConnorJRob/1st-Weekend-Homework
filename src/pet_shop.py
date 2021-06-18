@@ -25,7 +25,6 @@ def increase_pets_sold(pet_shop, pet_sales):
 def get_stock_count(pet_shop):
     return len(pet_shop["pets"])
 
-
 def get_pets_by_breed(pet_shop, breed):
     #function creates a blank list of pets matching the specified breed
     pets_matching_breed = []
@@ -55,4 +54,13 @@ def remove_pet_by_name(pet_shop, pet_name):
 #function adds on the new_pet dictionary item to the pet_shop["pets"] list
 def add_pet_to_stock(pet_shop, new_pet):
     pet_shop["pets"].append(new_pet)
+
+#funciton takes customer list and an index number as an argument, then return the value stored in the cash key of this customers dictionary
+def get_customer_cash(customer):
+    return customer['cash']
+    
+#function accesses specified customer and removes the cash_payment value provided from the cash key of their dictionary
+def remove_customer_cash(customer, cash_payment):
+    customer["cash"] -= cash_payment
+
 
