@@ -44,3 +44,11 @@ def find_pet_by_name(pet_shop, pet_name):
             return pet
             break
 
+#function takes the pet name argument and loops through the pet_shop list
+def remove_pet_by_name(pet_shop, pet_name):
+    for pet in pet_shop["pets"]:
+        #if the pet name argument matches the pet['name'] value of the list item, the entire list item (dictionary) for this pet is removed from the pet_shop list
+         if pet_name == pet['name']:
+            pet_shop["pets"].remove(pet)
+            break
+
