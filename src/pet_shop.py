@@ -16,3 +16,8 @@ def add_or_remove_cash(pet_shop, cash_amount):
 def get_pets_sold(pet_shop):
     #need to return the pets sold value from admin dictionary
     return pet_shop["admin"]["pets_sold"]
+
+def increase_pets_sold(pet_shop, pet_sales):
+    #need to update the dictionary with the change pets sold
+    pet_shop["admin"]["pets_sold"] = (pet_shop["admin"]["pets_sold"] + pet_sales)
+
