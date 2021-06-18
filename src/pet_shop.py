@@ -25,12 +25,17 @@ def get_stock_count(pet_shop):
     return len(pet_shop["pets"])
 
 def get_pets_by_breed(pet_shop, breed):
-    # pdb.set_trace()
     #need to create a list of dog names that have a breed matching the breed type specified
     pets_matching_breed = []
     for pet in pet_shop["pets"]:
-        #pets is a list not a dictionary, so breed is not a key of pets
         if breed == pet['breed']:
             pets_matching_breed.append(pet['name'])
     return pets_matching_breed
 
+def find_pet_by_name(pet_shop, pet_name):
+    # pdb.set_trace()
+    found_pet = ""
+    for pet in pet_shop["pets"]:
+        if pet_name == pet['name']:
+            return pet
+            break
