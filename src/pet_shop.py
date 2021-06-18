@@ -21,3 +21,7 @@ def increase_pets_sold(pet_shop, pet_sales):
     #need to update the dictionary with the change pets sold
     pet_shop["admin"]["pets_sold"] = (pet_shop["admin"]["pets_sold"] + pet_sales)
 
+def get_stock_count(pet_shop):
+    #need to take a count of the keys in the pets list, as each pet is one stock
+    return len(pet_shop["pets"])
+
