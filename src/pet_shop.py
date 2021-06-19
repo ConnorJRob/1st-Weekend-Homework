@@ -11,7 +11,7 @@ def get_total_cash(pet_shop):
 
 #function locates the value assigned to the total_cash key within the nested admin dictionary and adjusts it by the cash amount value provided (+/-)
 def add_or_remove_cash(pet_shop, cash_amount):
-    pet_shop["admin"]["total_cash"] = (pet_shop["admin"]["total_cash"] + cash_amount)
+    pet_shop["admin"]["total_cash"] += cash_amount
 
 #function searching the admin dictionary within the petshop dictionary and returns the value assigned to the pets_sold key
 def get_pets_sold(pet_shop):
